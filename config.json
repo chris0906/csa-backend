@@ -1,0 +1,7 @@
+{
+  "key": "123456",
+  "sendgrid_api_key": "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",
+  "email_expireTime": "1d",
+  "email_from": "CSA@example.com",
+  "email_subject": "Verification Email"
+}
