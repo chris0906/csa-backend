@@ -1,0 +1,1 @@
+docker inspect --format="{{json .State.Health}}" chris1 | python -m json.tool
