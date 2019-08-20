@@ -2,12 +2,19 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const account = require("./routers/userRoute");
+const topic = require("./routers/topicRoute");
+const post = require("./routers/postRoute");
 const redis = require("redis");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/account", account);
+app.use("/topic", topic);
+app.use("/post", post);
+app.use((err, req, res, next) => {
+  if (err) res.send({ msg: err });
+});
 
 app.get("/health-check", (req, res) => {
   return res.status(200).send("healthy...");

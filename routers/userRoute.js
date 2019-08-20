@@ -23,8 +23,8 @@ router.post("/api-token-auth", async (req, res) => {
   if (!valid) return res.status(400).send("Email or Password is invalid"); //password is wrong
 
   // user didn't activate
-  if (!user.is_active)
-    return res.status(400).send("user has not been activated");
+  // if (!user.is_active)
+  //   return res.status(400).send("user has not been activated");
 
   const token = user.generateJwtToken();
 

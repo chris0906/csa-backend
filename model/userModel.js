@@ -23,7 +23,17 @@ const userSchema = mongoose.Schema({
   is_active: {
     type: Boolean,
     default: false
-  }
+  },
+  avatar_url: { type: String },
+  gender: {
+    type: String,
+    enum: ["male", "female"],
+    default: "male",
+    required: true
+  },
+  headline: { type: String },
+  locations: { type: [{ type: String }] },
+  business: { type: String }
 });
 
 userSchema.methods.generateJwtToken = function() {
